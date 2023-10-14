@@ -51,4 +51,5 @@ public void enterloginDetails() throws Throwable {
 public String displayMsg() {
 	return Utility.DisplayedText(sucessMsg);
 }
+
 }

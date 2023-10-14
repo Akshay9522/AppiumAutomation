@@ -1,5 +1,7 @@
 package com.utils;
 
+import java.awt.Dimension;
+
 import org.openqa.selenium.WebElement;
 
 public class Utility {
@@ -13,5 +15,8 @@ public static void sendText (WebElement element, String text) {
 }
 public static String DisplayedText (WebElement element) {
 	return element.getText();
+}
+public static void scroll(Dimension size) {
+	
 }
 }
