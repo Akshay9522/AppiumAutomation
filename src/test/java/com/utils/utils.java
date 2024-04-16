@@ -11,7 +11,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 
-public class utils extends BaseTest implements ITestListener{
+public class utils extends Base implements ITestListener{
 
 	public void onTestFailure(ITestResult result) {
 
