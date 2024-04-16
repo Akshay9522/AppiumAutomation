@@ -10,7 +10,7 @@ Then  login must be successful message displayed
 And   clicked on ok
 
 @Regression
-Scenario: Check Login Functionality By Multiple User
+Scenario Outline: Check Login Functionality By Multiple User
 
 Given user launched android mobile application
 When  user entered Username "<username>" and Password as "<password>"
