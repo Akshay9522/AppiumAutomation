@@ -14,7 +14,7 @@ public class GestureStep extends Base {
 		gpge = new GesturePage(driver);
 		gpge.clickswipe();
 	}
-
+	
 	@When("user swiped toward {string} once")
 	public void user_swiped_toward_once(String string) {
 		gpge.swipeByfullopensrc(string);

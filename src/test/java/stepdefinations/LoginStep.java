@@ -13,6 +13,7 @@ import io.cucumber.java.en.When;
 public class LoginStep extends Base {
 	public LoginPage lgpge;
 	
+
 	@Given("user launched android mobile application")
 	public void user_launched_mobile_application() throws Throwable {
 		androidDriver(loadProperties().getProperty("appium.server.url"), androidCapabilities());
