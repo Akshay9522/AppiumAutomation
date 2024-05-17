@@ -20,8 +20,12 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.remote.options.BaseOptions;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
 
 public class Base {
@@ -29,6 +33,8 @@ public class Base {
 	public static Properties pro;
 	public static AndroidDriver driver;
 	public IOSDriver iosdriver;
+	public static AppiumServiceBuilder builder;
+	public static AppiumDriverLocalService service;
 	public static Properties loadProperties() throws Throwable {
 		File file = new File(System.getProperty("user.dir")+"//config.properties");
 		FileReader fr = new FileReader(file);
@@ -60,6 +66,16 @@ public class Base {
 		options.setCapability("appPackage", loadProperties().getProperty("android.app2.packageName"));
 		options.setCapability("appActivity", loadProperties().getProperty("android.app2.activityName"));
 		options.setCapability("fullReset", loadProperties().getProperty("android.fullReset"));
+		options.setCapability("noReset", loadProperties().getProperty("android.noReset"));
+		return options;		
+	}
+	public static UiAutomator2Options androidBrowserCapabilities() throws Throwable {
+		UiAutomator2Options options = new UiAutomator2Options();
+		options.setPlatformName(loadProperties().getProperty("android.platformName"));
+		options.setCapability("platformVersion", loadProperties().getProperty("android.platformVersion"));
+		options.setCapability("deviceName", loadProperties().getProperty("deviceName"));
+		options.setCapability("automationName", loadProperties().getProperty("android.automationName"));
+		options.setCapability("browserName", "Chrome");
 		options.setCapability("noReset", loadProperties().getProperty("android.noReset"));
 		return options;		
 	}

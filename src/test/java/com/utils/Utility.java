@@ -73,7 +73,7 @@ public static void pressBackKey(AndroidDriver driver) {
 	driver.pressKey(new KeyEvent(AndroidKey.BACK));
 }
 public static void pressHomeKey(AndroidDriver driver) {
-	driver.pressKey(new KeyEvent(AndroidKey.BACK));
+	driver.pressKey(new KeyEvent(AndroidKey.HOME));
 }
 public static void openActivity(AndroidDriver driver,String packageName,String appActivity ) {
 	((JavascriptExecutor) driver).executeScript("mobile: startActivity", ImmutableMap.of(

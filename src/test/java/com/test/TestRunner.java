@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 		glue="stepdefinations",
 		monochrome=true,
 		//dryRun=true,
-		tags="@Regression",
+		tags="@Testt",
 		plugin= {"pretty","json:target/cucumber.json"}
 		)
 public class TestRunner {
